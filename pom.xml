@@ -6,10 +6,6 @@
   <packaging>war</packaging>
   <name>second-hand</name>
   
-  <properties>
-  <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-  </properties>
-  
   <dependencies>
    <dependency>                                                            
         <groupId>mysql</groupId>                                      
@@ -111,9 +107,6 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<compilerArguments>
-					<endorsed.dirs>${endorsed.dir}</endorsed.dirs>
-					</compilerArguments>
 				</configuration>
 			</plugin>
 			<plugin>
