@@ -47,7 +47,9 @@ public class UserServlet extends BaseServlet {
 		}
 		
 		try {
+
 		userService.register(user);
+
 		} catch (UserException e) {
 			request.setAttribute("msg", e.getMessage());
 			request.setAttribute("user", user);

@@ -1,5 +1,7 @@
 package cn.second_hand.user.service;
 
+import org.bson.Document;
+
 import cn.second_hand.user.dao.UserDao;
 import cn.second_hand.user.domain.User;
 import cn.second_hand.user.domain.UserException;
@@ -11,18 +13,20 @@ public class UserService {
 		if(dao.findByEmail(user.getEmail())!=null) {
 			throw new UserException("Email address already exists");
 		}
-		
 		dao.register(user);
 	}
 
 	public User login(User user) throws UserException {
-		User u = dao.findByEmail(user.getEmail());
-		if(u==null) {
+		Document d = dao.findByEmail(user.getEmail());
+		if(d==null) {
 			throw new UserException("Email address not exists");
 		}
-		if(!u.getPassword().equals(user.getPassword())) {
+		if(!d.getString("password").equals(user.getPassword())) {
 			throw new UserException("Password is wrong");
 		}
+		User u = new User();
+		u.setEmail(d.getString("email"));
+		u.setPassword(d.getString("password"));
 		return u;
 	}
 

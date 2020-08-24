@@ -1,36 +1,28 @@
 package cn.second_hand.user.dao;
 
-import java.sql.SQLException;
+import org.bson.Document;
+import org.bson.conversions.Bson;
 
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 
 import cn.second_hand.user.domain.User;
-import cn.second_hand.user.utils.TxQueryRunner;
+import cn.second_hand.user.utils.MongoDBUtil;
 
 public class UserDao {
-	private QueryRunner qr = new TxQueryRunner();
-
+	private MongoDatabase database = MongoDBUtil.getConnect();
+	private MongoCollection<Document> collection = database.getCollection("customer");
 	public void register(User user) {
-		String sql = "insert into loginInfo(email,password) values(?,?)";
-		Object[] param = {
-				user.getEmail(),user.getPassword()};
-		try {
-			qr.update(sql, param);
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-		
+		collection.insertOne(new Document("email",user.getEmail()).append("password", user.getPassword()));
 	}
 
-	public User findByEmail(String email) {
-		String sql = "select * from loginInfo where email=?";
-		try {
-			return qr.query(sql, new BeanHandler<User>(User.class),email);
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		
-		}
+	public Document findByEmail(String email) {
+		Bson filter = Filters.eq("email", email);
+		FindIterable findIterable = collection.find(filter);
+		Document document = (Document) findIterable.first();
+		return document;
 	}
 
 }

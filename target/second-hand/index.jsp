@@ -10,5 +10,16 @@
 </head>
 <body>
 Hello ${session_user.email}
+
+<div class="el-header" >
+		<div class="container" style="position: relative;">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/index.jsp">HomePage</a></li>
+				<li><a href="/register.jsp">Sign-up</a></li>
+				<li><a href="/login.jsp">Sign-in</a></li>
+				<li><a href="/mLab.jsp">mLab</a></li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
