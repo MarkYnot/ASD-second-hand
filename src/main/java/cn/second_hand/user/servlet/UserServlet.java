@@ -14,6 +14,11 @@ import cn.second_hand.user.service.UserService;
 
 public class UserServlet extends BaseServlet {
 	private UserService userService = new UserService();
+	
+	public String logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getSession().invalidate();
+		return "r:/login.jsp";
+	}
 
 	public  String register(HttpServletRequest request, HttpServletResponse response)   {
 		User user = new User();

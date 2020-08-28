@@ -11,7 +11,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 
-import cn.second_hand.user.utils.MongoDBUtil;
+import cn.second_hand.user.utils.MongoDBUtils;
 
 // Class for test MongoDB Connection
 public class Connect2mlabExample {
@@ -27,7 +27,7 @@ public class Connect2mlabExample {
 //			    .build();
 //			MongoClient mongoClient = MongoClients.create(settings);
 //			MongoDatabase database = mongoClient.getDatabase("heroku_p78k6xgn");
-		    MongoDatabase database = MongoDBUtil.getConnect();
+		    MongoDatabase database = MongoDBUtils.getConnect();
 			MongoCollection<Document> collection = database.getCollection("customer");
 			Bson filter = Filters.eq("email", "marin1@gmail.com");
 			FindIterable findIterable = collection.find(filter);

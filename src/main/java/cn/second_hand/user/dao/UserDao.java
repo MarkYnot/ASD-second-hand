@@ -9,10 +9,10 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 
 import cn.second_hand.user.domain.User;
-import cn.second_hand.user.utils.MongoDBUtil;
+import cn.second_hand.user.utils.MongoDBUtils;
 
 public class UserDao {
-	private MongoDatabase database = MongoDBUtil.getConnect();
+	private MongoDatabase database = MongoDBUtils.getConnect();
 	private MongoCollection<Document> collection = database.getCollection("customer");
 	public void register(User user) {
 		collection.insertOne(new Document("email",user.getEmail()).append("password", user.getPassword()));

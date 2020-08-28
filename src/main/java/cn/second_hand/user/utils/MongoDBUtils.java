@@ -14,7 +14,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
  
 
-public class MongoDBUtil {
+public class MongoDBUtils {
 
     public static MongoDatabase getConnect()
     {

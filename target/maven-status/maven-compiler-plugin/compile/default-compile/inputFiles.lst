@@ -1,11 +1,8 @@
-/Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/utils/MongoDBUtil.java
-/Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/utils/TxQueryRunner.java
-/Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/servlet/AServlet.java
 /Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/domain/User.java
 /Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/Connect2mlabExample.java
 /Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/servlet/BaseServlet.java
 /Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/domain/UserException.java
 /Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/dao/UserDao.java
 /Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/servlet/UserServlet.java
-/Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/utils/JdbcUtils.java
+/Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/utils/MongoDBUtils.java
 /Users/marin/Downloads/github/ASD-second-hand/second-hand/src/main/java/cn/second_hand/user/service/UserService.java
